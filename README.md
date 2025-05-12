@@ -27,4 +27,4 @@ Tad arī mazāk tika pielietota funkcija listdir un atribūts path no bibliotēk
 Pēdējā bibliotēka ir lgpio, tā strādā tikai uz paša Raspberry Pi (iespējams arī uz citiem līdzīgiem risinājumiem), caur to tiek nodrošināta saziņa ar fiziskajām izejām. Tās darbība noklusējumā ir atslēgta pirmajā app.py rindā.
 
 
-Programmu vēlams palaizt atsevišķā venv vidē, laba pamācība atrodama šeit: https://dev.to/mursalfk/setup-flask-on-windows-system-using-vs-code-4p9j
+Programmu vēlams palaist atsevišķā venv vidē, laba pamācība atrodama šeit: https://dev.to/mursalfk/setup-flask-on-windows-system-using-vs-code-4p9j
