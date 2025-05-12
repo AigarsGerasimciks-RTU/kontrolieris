@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Edit states</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='visual.css')}}" />
+  </head>
+  <body>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'edit.js') }}"></script>
+    
+    <div class="navbar">
+      <a href="/main">Live data</a>
+      <a href="/edit">Edit actions</a>
+      <a href="/logs">View/Download data</a>
+      <a href="/editlogs">View edit logs</a>
+      <a href="/setup">Other settings</a>
+      <a href="/logout" class="important">Logout</a>
+    </div>
+    
+    <div class="table-visual">
+      <h1>Edit actions/states</h2>
+      <label for="selector">Channel:</label>
+      
+      <form action="edit" method="POST" id="edit" class="inline">
+        <select name="selector" id="selector" onchange="updateSelector()">
+          {% include "temp_selector_edit.html" %}
+        </select>
+        
+        <label for="enable">Enabled: </label>
+        <input type="checkbox" name="enable" id="enable" {{ "checked" if channels[selectedChannel].isActive else "" }}><br>
+        
+        {% include 'temp_edit.html' %}
+        
+        <input type="submit" id="submit" name="submit" value="Update values">
+        <input type="submit" id="submit" name="submit" value="Add new state">
+      </form>
+    </div>
+  </body>
+</html>

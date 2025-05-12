@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Edit log</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='visual.css')}}" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/main">Live data</a>
+      <a href="/edit">Edit actions</a>
+      <a href="/logs">View/Download data</a>
+      <a href="/editlogs">View edit logs</a>
+      <a href="/setup">Other settings</a>
+      <a href="/logout" class="important">Logout</a>
+    </div>
+    <div class="table-visual">
+      <a href="/download-editlogs" target="_blank">Download full edit log</a>
+      <h2>Edit log: </h2>
+      {% include 'temp_editlog.html' %}
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>View data</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='visual.css')}}" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/main">Live data</a>
+      <a href="/edit">Edit actions</a>
+      <a href="/logs">View/Download data</a>
+      <a href="/editlogs">View edit logs</a>
+      <a href="/setup">Other settings</a>
+      <a href="/logout" class="important">Logout</a>
+    </div>
+    
+    <form action="logs" method="POST" id="logs">
+      <table class="table-visual">
+        <tr>
+          <th style="padding:5px">
+            <label for="start">Starting date: </label>
+            <input type="datetime-local" name="start" id="start" value="{{ formattedStartTime }}">
+          </th>
+          <th style="padding:5px">
+            <label for="end">End date: </label>
+            <input type="datetime-local" name="end" id="end" value="{{ formattedEndTime }}">
+          </th>
+          <th style="padding:5px">
+            <input type="submit" name="submit" id="submit" value="Search">
+          </th>
+          <th style="padding:5px">
+            <a href="/download-data" target="_blank">Download last generated log file</a>
+          </th>
+        </tr>
+      </table>
+    </form>
+    
+    <div class="table-visual">
+      emm
+    </div>
+  </body>
+</html>

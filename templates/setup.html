@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Other setup</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='visual.css')}}" />
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="/main">Live data</a>
+      <a href="/edit">Edit actions</a>
+      <a href="/logs">View/Download data</a>
+      <a href="/editlogs">View edit logs</a>
+      <a href="/setup">Other settings</a>
+      <a href="/logout" class="important">Logout</a>
+    </div>
+    
+    <div class="table-visual">
+      <h1>Change global variables</h1>
+      <h2 class="important">Be careful! Double check entered values!</h2>
+      <form action="setup" method="POST" id="add">
+        <label for="maxlogentriesperfile">Maximum log entries per file</label>
+        <input id="maxlogentriesperfile" name="maxlogentriesperfile" type="number" min="0" step="1" value="{{ configValues['maxLogEntriesPerFile'] }}" required>
+        <br>
+        <label for="maxoutputvoltage">Maximum voltage that can be output</label>
+        <input id="maxoutputvoltage" name="maxoutputvoltage" type="number" min="0" step="0.001" value="{{ configValues['maxOutputVoltage'] }}" required>
+        <br>
+        <label for="maxoutputamperage">Maximum amperage that can be output</label>
+        <input id="maxoutputamperage" name="maxoutputamperage" type="number" min="0" step="0.001" value="{{ configValues['maxOutputAmperage'] }}" required>
+        <br>
+        <label for="referencevoltage">Voltage used as refernce for ADC</label>
+        <input id="referencevoltage" name="referencevoltage" type="number" min="0" step="0.001" value="{{ configValues['referenceVoltage'] }}" required>
+        <br>
+        <label for="gpiorate">How many times per second to update output</label>
+        <input id="gpiorate" name="gpiorate" type="number" min="0" step="0.001" value="{{ configValues['GPIORate'] }}" required>
+        <br>
+        <label for="saverate">How many times per second to log data</label>
+        <input id="saverate" name="saverate" type="number" min="0" step="0.001" value="{{ configValues['SaveRate'] }}" required>
+        <br>
+        <label for="sendrate">How many times per second to send data to this page</label>
+        <input id="sendrate" name="sendrate" type="number" min="0" step="0.001" value="{{ configValues['SendRate'] }}" required>
+        <br>
+        <input type="submit" value="Set values">
+      </form>
+    </div>
+  </body>
+</html>

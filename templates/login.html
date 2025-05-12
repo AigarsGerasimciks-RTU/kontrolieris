@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='visual.css')}}" />
+    <head>
+        <meta charset="utf-8">
+        <title>Log in to access</title>
+    </head>
+    <body class="page-hvcentered">
+        <h1 class="hcentered">Please log in to access this!</h1>
+
+        <form class="hcentered" action='login' method='POST'>
+            <label for="username">Username: </label><br>
+            <input type='text' name='username' id='username' placeholder='Username'/><br>
+            <br>
+            <label for="password">Password: </label><br>
+            <input type='password' name='password' id='password' placeholder='Password'/><br>
+            <br>
+            <input type='submit' name='submit' value="Log in"/>
+        </form>
+
+        {% if retry %}
+        <h2 class="important hcentered">Wrong login and/or password! Try again!</h2> 
+        {% endif %}
+    </body>
+</html>

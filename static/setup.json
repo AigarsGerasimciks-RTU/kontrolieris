@@ -1,0 +1,1 @@
+{"maxLogEntriesPerFile": 500, "maxOutputVoltage": 3.3, "maxOutputAmperage": 20.0, "referenceVoltage": 5.0, "DACMaxVoltage": 2.2, "GPIORate": 25.0, "SaveRate": 5.0, "SendRate": 10.0}

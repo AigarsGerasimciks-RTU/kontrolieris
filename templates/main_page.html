@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hydrolysis Monitor</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js" integrity="sha512-aMGMvNYu8Ue4G+fHa359jcPb1u+ytAF+P2SCb+PxrjCdO3n3ZTxJ30zuH39rimUggmTwmh2u7wvQsDTHESnmfQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='visual.css')}}" />
+  </head>
+  <body>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'main_page.js') }}"></script>
+
+    <div class="navbar">
+      <a href="/main">Live data</a>
+      <a href="/edit">Edit actions</a>
+      <a href="/logs">View/Download data</a>
+      <a href="/editlogs">View edit logs</a>
+      <a href="/setup">Other settings</a>
+      <a href="/logout" class="important">Logout</a>
+    </div>
+
+    <h2>Keep <input type="number" name="time" id="time" min="1" step="1" value="300" onchange="changeTime(document)" style="font-size:medium; width:45px"> sensor reading values in page.</h2>
+
+    <table>
+      <tr>
+        <td style="vertical-align: top">
+          <table class="table-visual" id="livetable">
+            <tr>
+              <th>Channel</th>
+              <th>Voltage</th>
+              <th>Target voltage</th>
+              <th>Amperage</th>
+            </tr>
+            {% include 'temp_main.html' %}
+          </table>
+        </td>
+        
+        <td style="vertical-align: top">
+          <h3 class="hcentered">Voltage</h3>
+          <div class="chart-container">
+            <canvas class="chart" id="VoltageChart"></canvas>
+          </div>
+          
+          <h3 class="hcentered">Target voltage</h3>
+          <div class="chart-container">
+            <canvas class="chart" id="TargetVoltageChart"></canvas>
+          </div>
+          
+          <h3 class="hcentered">Amperage</h3>
+          <div class="chart-container">
+            <canvas class="chart" id="AmperageChart"></canvas>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>
