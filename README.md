@@ -28,3 +28,7 @@ Pēdējā bibliotēka ir lgpio, tā strādā tikai uz paša Raspberry Pi (iespē
 
 
 Programmu vēlams palaist atsevišķā venv vidē, laba pamācība atrodama šeit: https://dev.to/mursalfk/setup-flask-on-windows-system-using-vs-code-4p9j
+
+
+Veidoja: Aigars Gerasimčiks, Datorsistēmas 12. gr.
+241RDB175
